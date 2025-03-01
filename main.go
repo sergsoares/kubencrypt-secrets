@@ -20,15 +20,23 @@ import (
 )
 
 type Options struct {
-	Password   string `short:"p" long:"password" env:"PASSWORD"`
-	Kubeconfig string `long:"kubeconfig" env:"KUBECONFIG"`
+	Password   string `short:"p" long:"password" env:"PASSWORD" description:"Password to encrypt zip file"`
+	Kubeconfig string `long:"kubeconfig" env:"KUBECONFIG" description:"Absolute path to kubeconfig (default: ~/.kube/config)"`
 }
 
 func parseOptions() Options {
 	var options Options
-	_, err := flags.Parse(&options)
-	if err != nil {
-		panic(err)
+	var parser = flags.NewParser(&options, flags.Default)
+	if _, err := parser.Parse(); err != nil {
+		switch flagsErr := err.(type) {
+		case flags.ErrorType:
+			if flagsErr == flags.ErrHelp {
+				os.Exit(0)
+			}
+			os.Exit(1)
+		default:
+			os.Exit(1)
+		}
 	}
 
 	if options.Kubeconfig == "" {
