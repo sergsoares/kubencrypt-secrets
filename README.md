@@ -9,8 +9,13 @@ CLI app for backup secrest from a K8S Cluster and encyrpt using [age - secure en
 
 ## Instalation
 
-```
-go install github.com/sergsoares/kubencrypt-secrets@latest
+``` bash
+$ curl -LO https://github.com/sergsoares/kubencrypt-secrets/releases/download/v0.1.0/kubencrypt-secrets_Linux_x86_64.zip
+
+$ unzip kubencrypt-secrets_Linux_x86_64.zip 
+
+$ ./kubencrypt-secrets --password test
+There are 6 secrets to be saved 
 ```
 
 ## Usage
