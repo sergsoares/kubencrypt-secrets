@@ -143,4 +143,14 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
+	err = os.Remove(secretsFolder + ".zip")
+	if err != nil {
+		panic(err)
+	}
+
+	err = os.RemoveAll(secretsFolder)
+	if err != nil {
+		panic(err)
+	}
 }
