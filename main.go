@@ -34,7 +34,6 @@ func parseOptions() Options {
 	if options.Kubeconfig == "" {
 		home := homedir.HomeDir()
 		options.Kubeconfig = filepath.Join(home, clientcmd.RecommendedHomeDir, clientcmd.RecommendedFileName)
-		//Log: debug kubeconfig path used
 	}
 
 	if !filepath.IsAbs(options.Kubeconfig) {
@@ -117,7 +116,7 @@ func main() {
 		panic(err.Error())
 	}
 
-	recipient.SetWorkFactor(2)
+	recipient.SetWorkFactor(18)
 
 	outputFile, _ := os.Create(secretsFolder + ".zip.age")
 	ageWriter, err := age.Encrypt(outputFile, recipient)
