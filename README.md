@@ -1,6 +1,6 @@
 # kubencrypt-secrets
 
-CLI app for backup secrest from a K8S Cluster and encyrpt using [age - secure encryption tool](https://github.com/FiloSottile/age).
+CLI app for backup secrets from a K8S Cluster and encyrpt using [age - secure encryption tool](https://github.com/FiloSottile/age).
 
 ## Features
 
