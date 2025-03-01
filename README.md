@@ -18,7 +18,7 @@ go install github.com/sergsoares/kubencrypt-secrets@latest
 ```
 $ ./kubencrypt-secrets --help
 Usage:
-  main [OPTIONS]
+  kubencrypt-secrets [OPTIONS]
 
 Application Options:
   -p, --password=   Password to encrypt zip file [$PASSWORD]
