@@ -13,12 +13,6 @@ CLI app for backup secrest from a K8S Cluster and encyrpt using [age - secure en
 go install github.com/sergsoares/kubencrypt-secrets@latest
 ```
 
-## Variables definition
-
-| Key | Type | Default | Description |
-|-----|------|---------|-------------|
-| PASSWORD | string | `"postgresql"` | default database for storage of database metadata |
-
 ## Usage
 
 ```
